@@ -94,7 +94,7 @@ ActionListNode*   node = &( _ActionList[ id ] );
         EntryBottom = node->Prev;
     }
 
-    if( node == Current ){
+    if ( node == Current ) {
         Current = node->Prev;
     }
 

@@ -5,8 +5,9 @@
 use strict;
 use warnings;
 use utf8;
+use Data::Dumper;
 use Getopt::Long qw(:config no_ignore_case);
-use Config::YAML;
+use Config::YAML::Tiny;
 
 # --- Global Variables --- #
 my %program;
@@ -90,7 +91,7 @@ sub parse_program_config
 
     my $filename = shift;
 
-    my $config = new Config::YAML( config => '/dev/null' );
+    my $config = new Config::YAML::Tiny( config => '/dev/null' );
     unless ( $filename ) {
         # try path that is changed to .conf extension .pl
         my $conf_path = __FILE__;
@@ -114,7 +115,7 @@ sub parse_program_config
 
 sub parse_program_option
 {
-    my $option = new Config::YAML( config => '/dev/null' );
+    my $option = new Config::YAML::Tiny( config => '/dev/null' );
     GetOptions(
         $option,
 
