@@ -144,7 +144,7 @@ sub parse_program_argv
     for my $arg ( @argv ) {
         verbose( "  argv => $arg", 2 );
     }
-    die usage() if @argv != 1;
+    die usage() if scalar @argv != 1;
 
     return @argv;
 }
